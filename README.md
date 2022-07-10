@@ -21,10 +21,11 @@ DATABASE_NAME=
 HOST=
 ```
 
-Para realizar pruebas:
+Para realizar pruebas locales:
 ```
 npm run dev
 ```
+http://localhost:3000
 
 Respuesta
 ```
@@ -32,7 +33,7 @@ Server listening on port 3000
 Conexión a DB establecida.
 ```
 
-http://localhost:3000
+
 
 ## Detalles de API
 API realizada con ExpressJS, debe tener creado el archivo para variables de entorno `.env` en la raíz del proyecto.
@@ -64,7 +65,7 @@ En `/src/routes/index.js` tenemos las solicitudes de categorías y productos
 ### Endpoints
 Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/`.
 
-#### GET lista de categorías
+#### GET - Lista de categorías
 
 #### Ejemplo:
 > `/categorias`
@@ -82,7 +83,7 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 }
 ```
 
-#### GET busca productos por nombre
+#### GET - Buscar productos por nombre
 
 #### Parámetros:
 - `nombre`: Texto a buscar.
@@ -114,10 +115,10 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 }
 ```
 
-#### GET lista de productos por categoría y página
+#### GET - Lista de productos por categoría y página
 
 #### Parámetros:
-- `id`: ID de Categoría.\
+- `id`: ID de Categoría.
 - `page`: Página de productos.
 
 #### Ejemplo:
