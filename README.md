@@ -2,22 +2,18 @@
 Tienda online simple en la que puede ver y buscar productos, el Frontend consume API que a su vez realiza solicitudes a la base de datos proporcionada.
 
 ## Instalación API
-Desde la carpeta de su preferenia ejecute el siguiente comando:
+Primero debemos clonar el repositorio:
 ```
 git clone https://github.com/techeca/SimpleStore-API.git
 ````
 
-Ingrese al repositorio descargado:
+Luego debe ingresar al repositorio descargado e instalar dependencias:
 ```
 cd SimpleStore-API
-```
-
-Instale depencias:
-```
 npm i
 ```
 
-Debe crear `.env` y copiar el siguiente contenido, rellene con las credenciales de la base de datos:
+Debe crear un archivo `.env` y copiar el siguiente contenido, rellene con las credenciales de la base de datos:
 ```javascript
 DB_USER=
 DB_PASSWORD=
@@ -29,10 +25,13 @@ Para realizar pruebas:
 ```
 npm run dev
 ```
-o
+
+Respuesta
 ```
-npm run prod
+Server listening on port 3000
+Conexión a DB establecida.
 ```
+
 http://localhost:3000
 
 ## Detalles de API
@@ -65,10 +64,10 @@ En `/src/routes/index.js` tenemos las solicitudes de categorías y productos
 ### Endpoints
 Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/`.
 
-> GET lista de categorías
+#### GET lista de categorías
 
 #### Ejemplo:
-`/categorias`
+> `/categorias`
 
 #### Respuesta:
 ```json
@@ -83,13 +82,13 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 }
 ```
 
-> GET busca productos por nombre
+#### GET busca productos por nombre
 
 #### Parámetros:
 - `nombre`: Texto a buscar.
 
 #### Ejemplo:
-`/productos/flor`
+> `/productos/flor`
 
 #### Respuesta:
 ```json
@@ -115,14 +114,14 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 }
 ```
 
-> GET lista de productos por categoría y página
+#### GET lista de productos por categoría y página
 
 #### Parámetros:
 - `id`: ID de Categoría.\
 - `page`: Página de productos.
 
 #### Ejemplo:
-`/productosByCategoria/?id=7&page=1`
+> `/productosByCategoria/?id=7&page=1`
 
 #### Respuesta:
 ```json
