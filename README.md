@@ -33,8 +33,6 @@ Server listening on port 3000
 Conexión a DB establecida.
 ```
 
-
-
 ## Detalles de API
 API realizada con ExpressJS, debe tener creado el archivo para variables de entorno `.env` en la raíz del proyecto.
 
@@ -67,10 +65,10 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 
 #### GET - Lista de categorías
 
-#### Ejemplo:
+##### Ejemplo
 > `/categorias`
 
-#### Respuesta:
+##### Respuesta
 ```json
 {
   "categorias": [
@@ -85,13 +83,13 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 
 #### GET - Buscar productos por nombre
 
-#### Parámetros:
+##### Parámetros
 - `nombre`: Texto a buscar.
 
-#### Ejemplo:
+##### Ejemplo
 > `/productos/flor`
 
-#### Respuesta:
+##### Respuesta
 ```json
 {
   "productos": [
@@ -117,14 +115,14 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 
 #### GET - Lista de productos por categoría y página
 
-#### Parámetros:
+##### Parámetros
 - `id`: ID de Categoría.
 - `page`: Página de productos.
 
-#### Ejemplo:
+##### Ejemplo
 > `/productosByCategoria/?id=7&page=1`
 
-#### Respuesta:
+##### Respuesta
 ```json
 {
   "productos": [
