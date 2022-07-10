@@ -1,6 +1,7 @@
+//import 'dotnev/config'
 require('dotenv').config();
-const mysql = require('mysql2')
 
+const mysql = require('mysql2')
 //Datos de conexión para pool
 const config = {
   user: process.env.DB_USER,
@@ -17,8 +18,9 @@ const config = {
    if(err){
      console.log('error connecting:' + err.stack);
    }else {
-     console.log('connected successfully to DB.');
+     console.log('Conexión a DB establecida.');
    }
  });
 
+//Se exporta pool para solicitudes
 module.exports = { pool: mysql.createPool(config) };

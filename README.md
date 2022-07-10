@@ -4,17 +4,25 @@ Tienda online simple en la que puede ver y buscar productos, el Frontend consume
 ## Instalación API
 Desde la carpeta de su preferenia ejecute el siguiente comando:
 ```
-git clone -b API https://github.com/techeca/storeJS.git API
+git clone https://github.com/techeca/SimpleStore-API.git
 ````
 
 Ingrese al repositorio descargado:
 ```
-cd API
+cd SimpleStore-API
 ```
 
 Instale depencias:
 ```
 npm i
+```
+
+Debe crear `.env` y copiar el siguiente contenido, rellene con las credenciales de la base de datos:
+```javascript
+DB_USER=
+DB_PASSWORD=
+DATABASE_NAME=
+HOST=
 ```
 
 Para realizar pruebas:
@@ -27,18 +35,10 @@ npm run prod
 ```
 http://localhost:3000
 
-### Detalles de API
+## Detalles de API
 API realizada con ExpressJS, debe tener creado el archivo para variables de entorno `.env` en la raíz del proyecto.
 
-En `.env` copie el siguiente contenido y complete con los datos de la base de datos:
-```javascript
-DB_USER=
-DB_PASSWORD=
-DATABASE_NAME=
-HOST=
-```
 En `/config/db.js` puede encontrar la configuración de mysql2 con `waitForConnections` para no perder la conexión.
-
 ```javascript
 const config = {
   user: process.env.DB_USER,
@@ -60,14 +60,14 @@ app.use(cors());
 app.use(require('./routes/index')); //Rutas de request
 ```
 
-En `/src/routes/index.js` tenemos las solicitudes de categorias y productos
+En `/src/routes/index.js` tenemos las solicitudes de categorías y productos
 
-#### Endpoints
-Los puntos accesibles son `/categorias`, `/productos/:name?` y `/productosByCategoria?`, por ejemplo:
+### Endpoints
+Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/`.
 
-> GET lista de categorias
+> GET lista de categorías
 
-#### Parámetros:
+#### Ejemplo:
 `/categorias`
 
 #### Respuesta:
@@ -83,10 +83,10 @@ Los puntos accesibles son `/categorias`, `/productos/:name?` y `/productosByCate
 }
 ```
 
-> GET productos por nombre
+> GET busca productos por nombre
 
 #### Parámetros:
-`nombre`: Texto a buscar.
+- `nombre`: Texto a buscar.
 
 #### Ejemplo:
 `/productos/flor`
@@ -115,11 +115,11 @@ Los puntos accesibles son `/categorias`, `/productos/:name?` y `/productosByCate
 }
 ```
 
-> GET lista de productos por categoría
+> GET lista de productos por categoría y página
 
 #### Parámetros:
-`id`: ID de Categoría.\
-`page`: Página de productos.
+- `id`: ID de Categoría.\
+- `page`: Página de productos.
 
 #### Ejemplo:
 `/productosByCategoria/?id=7&page=1`
@@ -145,9 +145,7 @@ Los puntos accesibles son `/categorias`, `/productos/:name?` y `/productosByCate
 }
 ```
 
-# Demos
+# Demo
 Fue utilizado [Render](https://render.com) para alojar Frontend y API.
 
-[API](https://api-g2zy.onrender.com)
-
-# Img
+[API](https://simplestore-api.onrender.com)
