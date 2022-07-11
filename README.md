@@ -148,4 +148,4 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 # Demo
 Fue utilizado [Render](https://render.com) para alojar Frontend y API.
 
-[API](https://simplestore-api.onrender.com)
+[API](https://simplestore-api2.onrender.com)
