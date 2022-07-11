@@ -13,14 +13,21 @@ const config = {
   queueLimit: 0
 };
 //Check de conexión
- const pool = mysql.createConnection(config);
- pool.connect((err) => {
-   if(err){
-     console.log('error connecting:' + err.stack);
-   }else {
-     console.log('Conexión a DB establecida.');
-   }
- });
+ const pool = mysql.createPool(config);
+ handleDisconnect(pool);
 
 //Se exporta pool para solicitudes
-module.exports = { pool: mysql.createPool(config) };
+module.exports = { pool: pool };
+
+function handleDisconnect(client) {
+  client.on('error', function (error) {
+    if (!error.fatal) return;
+    if (error.code !== 'PROTOCOL_CONNECTION_LOST') throw err;
+
+    console.log('> Re-connecting lost MySQL connection: ' + error.stack);
+
+    mysqlClient = mysql.createPool(config);
+    handleDisconnect(mysqlClient);
+    mysqlClient.connect();
+  });
+};
