@@ -149,3 +149,5 @@ Los puntos accesibles son `/categorias`, `/productos/` y `/productosByCategoria/
 Fue utilizado [Render](https://render.com) para alojar Frontend y API.
 
 [API](https://simplestore-api2.onrender.com)
+
+** Al WebService de Render le cuesta un poco retomar conexiones pero funciona.
